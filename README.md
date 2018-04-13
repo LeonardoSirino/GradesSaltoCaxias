@@ -1,2 +1,2 @@
-# GradesSaltoCaxias
-Programa para a aquisição de dados durante os ensaio nas grades da Usina de Salto Caxias
+﻿# GradesSaltoCaxias
+Repositório para os programas usados durante os ensaios nas grades da Usina de Salto Caxias
