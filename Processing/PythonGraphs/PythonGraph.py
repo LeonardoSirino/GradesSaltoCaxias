@@ -47,6 +47,7 @@ class ChannelData:
         plt.scatter(self.velocs, self.freqs, s=self.amps, alpha=0.4)
 
     def PlotSingle(self):
+        SingleGraf = plt.figure()
         plt.clf()
         plt.scatter(self.velocs, self.freqs, s=self.amps, alpha=0.4)
         plt.title(self.canal)
@@ -54,6 +55,7 @@ class ChannelData:
         plt.ylabel("Frequência [Hz]")
         limits = [0, 3.5, 0, 120]
         plt.axis(limits)
+        plot_url = py.plot_mpl(SingleGraf, filename=self.canal)
         plt.show()
 
 
@@ -64,7 +66,7 @@ class ChannelData:
 Channels = []
 for line in dados:
     data = line.split("\t")
-    if "Canal" in data[0]:
+    if "Grade" in data[0]:
         NewChannel = ChannelData(data[0])
         Channels.append(NewChannel)
     elif data[0] == "\n":
@@ -88,5 +90,5 @@ plt.legend(legend, loc = 2)
 plt.title("Influência da velocidade na frequência e amplitude de vibração")
 plt.xlabel("Velocidade [m/s]")
 plt.ylabel("Frequência [Hz]")
-#plot_url = py.plot_mpl(Graf, filename='SaltoCaxiasGeral')
+plot_url = py.plot_mpl(Graf, filename='SaltoCaxiasGeral')
 plt.show()
